@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+<h1 th:text="${brinquedo.id == null ? 'Adicionar Brinquedo' : 'Editar Brinquedo'}"></h1>
+<form th:action="@{${brinquedo.id == null ? '/brinquedos' : '/brinquedos/atualizar/' + ${brinquedo.id}}}" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" th:value="${brinquedo.nome}"/><br/>
+
+    <label for="tipo">Tipo:</label>
+    <input type="text" id="tipo" name="tipo" th:value="${brinquedo.tipo}"/><br/>
+
+    <label for="classificacao">Classificação:</label>
+    <input type="text" id="classificacao" name="classificacao" th:value="${brinquedo.classificacao}"/><br/>
+
+    <label for="tamanho">Tamanho:</label>
+    <input type="text" id="tamanho" name="tamanho" th:value="${brinquedo.tamanho}"/><br/>
+
+    <label for="preco">Preço:</label>
+    <input type="text" id="preco" name="preco" th:value="${brinquedo.preco}"/><br/>
+
+    <button type="submit">Salvar</button>
+</form>
+</body>
+</html>
